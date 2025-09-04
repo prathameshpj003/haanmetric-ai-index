@@ -1,0 +1,16 @@
+{
+  "org": "haanmetric-wq",
+  "parameters": {
+    "floor_price": {"definedIn": "astroCrown-ACS.docs/parameters/acs-parameters.yml#floor_price"},
+    "roof_price": {"definedIn": "astroCrown-ACS.docs/parameters/acs-parameters.yml#roof_price"},
+    "tax_rate": {"definedIn": "astroCrown-ACS.docs/parameters/acs-parameters.yml#tax_rate"},
+    "allocation_splits": {"definedIn": "astroCrown-ACS.docs/parameters/acs-parameters.yml#allocation_splits"},
+    "crash_threshold": {"definedIn": "astroCrown-ACS.docs/parameters/acs-parameters.yml#crash_threshold"},
+    "rocket_fuel": {
+      "definedIn": "astroCrown-ACS.docs/parameters/acs-parameters.yml#rocket_fuel",
+      "configuredIn": "astroCrown-ACS.core/config/baseline_v1.0.0.yaml#rocket_fuel_mode",
+      "benchmarkedIn": "astroCrown-ACS.benchmarks/protocols/allocation-strategy-comparison.md#rocket-fuel",
+      "reportedIn": "astroCrown-ACS.results/index/results-index.md#rocket-fuel"
+    }
+  }
+}
