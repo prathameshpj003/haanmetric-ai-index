@@ -1,0 +1,18 @@
+purpose: "Single source of truth for AI navigation across haanmetric-wq"
+entryPoints:
+  - kind: manifest
+    path: "AI_MANIFEST.yml"
+  - kind: index
+    path: "public/index.json"
+conceptTags:
+  - acs-parameter
+  - allocation-strategy
+  - monte-carlo
+  - rocket-fuel
+navigation:
+  - task: "Find ACS parameters"
+    start: "astroCrown-ACS.docs/parameters/acs-parameters.yml"
+  - task: "Run simulation"
+    start: "astroCrown-ACS.core/config/baseline_v1.0.0.yaml"
+  - task: "Compare allocation strategies"
+    start: "astroCrown-ACS.benchmarks/protocols/allocation-strategy-comparison.md"
