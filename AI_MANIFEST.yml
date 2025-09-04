@@ -1,0 +1,58 @@
+org: haanmetric-wq
+lastUpdated: 2025-09-04
+repositories:
+  - name: astroCrown-ACS.docs
+    purpose: "Documentation hub and parameter registry for ACS"
+    keyFiles:
+      - path: parameters/acs-parameters.yml
+        role: "Machine-readable ACS parameter registry"
+        aiTags: [acs-parameter, registry, yaml]
+      - path: methodology/acs-parameters.md
+        role: "Human-readable ACS parameters (peer-level: floor, roof, tax, rocket_fuel)"
+        aiTags: [acs-parameter, docs]
+  - name: astroCrown-ACS.core
+    purpose: "Simulation engine & NOVA governance logic"
+    keyFiles:
+      - path: config/baseline_v1.0.0.yaml
+        role: "Baseline Monte Carlo parameters (rocket_fuel_mode defaults disabled)"
+        aiTags: [monte-carlo-config, acs-parameter]
+  - name: astroCrown-ACS.benchmarks
+    purpose: "Benchmark protocols and comparator configs"
+    keyFiles:
+      - path: protocols/allocation-strategy-comparison.md
+        role: "Benchmark plan for allocation modes (baseline, rocket_fuel, variants)"
+        aiTags: [benchmark, allocation-strategy]
+  - name: astroCrown-ACS.results
+    purpose: "Simulation outputs and parameter surfaces"
+    keyFiles:
+      - path: index/results-index.md
+        role: "Results table of contents with allocation-mode entries"
+        aiTags: [results-index]
+  - name: astroCrown-ACS.governance
+    purpose: "NOVA governance configs and activation policies"
+    keyFiles:
+      - path: policies/activation-parameters.md
+        role: "Governance-controlled parameter toggles (including rocket_fuel activation)"
+        aiTags: [governance, activation]
+  - name: astroCrown-ACS.data
+    purpose: "Calibration datasets and fee/liquidity profiles"
+    keyFiles:
+      - path: feeds/market-fees.md
+        role: "Fee/slippage data notes used by ACS"
+        aiTags: [data, fees]
+parameters:
+  - id: floor_price
+    definedIn: astroCrown-ACS.docs/parameters/acs-parameters.yml#floor_price
+  - id: roof_price
+    definedIn: astroCrown-ACS.docs/parameters/acs-parameters.yml#roof_price
+  - id: tax_rate
+    definedIn: astroCrown-ACS.docs/parameters/acs-parameters.yml#tax_rate
+  - id: allocation_splits
+    definedIn: astroCrown-ACS.docs/parameters/acs-parameters.yml#allocation_splits
+  - id: crash_threshold
+    definedIn: astroCrown-ACS.docs/parameters/acs-parameters.yml#crash_threshold
+  - id: rocket_fuel
+    definedIn: astroCrown-ACS.docs/parameters/acs-parameters.yml#rocket_fuel
+    configuredIn: astroCrown-ACS.core/config/baseline_v1.0.0.yaml#rocket_fuel_mode
+    benchmarkedIn: astroCrown-ACS.benchmarks/protocols/allocation-strategy-comparison.md#rocket-fuel
+    reportedIn: astroCrown-ACS.results/index/results-index.md#rocket-fuel
