@@ -1,0 +1,15 @@
+# Never track secrets or private configs
+*.key
+*.pem
+*.env
+.env.*
+config/private/
+secrets/
+credentials/
+*.p12
+*.pfx
+*.keystore
+
+# Local tooling
+.DS_Store
+Thumbs.db
