@@ -1,58 +1,97 @@
 org: haanmetric-wq
-lastUpdated: 2025-09-04
+lastUpdated: 2025-09-05
 repositories:
-  - name: astroCrown-ACS.docs
+  - name: AstroCrown-ACS.docs
     purpose: "Documentation hub and parameter registry for ACS"
     keyFiles:
+      - path: README.ai.yml
+        role: "AI-first navigation entry point for documentation repo"
+        aiTags: [ai-entry, docs]
       - path: parameters/acs-parameters.yml
         role: "Machine-readable ACS parameter registry"
         aiTags: [acs-parameter, registry, yaml]
       - path: methodology/acs-parameters.md
         role: "Human-readable ACS parameters (peer-level: floor, roof, tax, rocket_fuel)"
         aiTags: [acs-parameter, docs]
-  - name: astroCrown-ACS.core
+  - name: AstroCrown-ACS.core
     purpose: "Simulation engine & NOVA governance logic"
     keyFiles:
+      - path: README.ai.yml
+        role: "AI-first navigation entry point for simulation engine"
+        aiTags: [ai-entry, core]
       - path: config/baseline_v1.0.0.yaml
         role: "Baseline Monte Carlo parameters (rocket_fuel_mode defaults disabled)"
         aiTags: [monte-carlo-config, acs-parameter]
-  - name: astroCrown-ACS.benchmarks
+  - name: AstroCrown-ACS.benchmarks
     purpose: "Benchmark protocols and comparator configs"
     keyFiles:
+      - path: README.ai.yml
+        role: "AI-first navigation entry point for benchmarks"
+        aiTags: [ai-entry, benchmarks]
       - path: protocols/allocation-strategy-comparison.md
         role: "Benchmark plan for allocation modes (baseline, rocket_fuel, variants)"
         aiTags: [benchmark, allocation-strategy]
-  - name: astroCrown-ACS.results
+  - name: AstroCrown-ACS.results
     purpose: "Simulation outputs and parameter surfaces"
     keyFiles:
+      - path: README.ai.yml
+        role: "AI-first navigation entry point for results"
+        aiTags: [ai-entry, results]
       - path: index/results-index.md
         role: "Results table of contents with allocation-mode entries"
         aiTags: [results-index]
-  - name: astroCrown-ACS.governance
+  - name: AstroCrown-ACS.governance
     purpose: "NOVA governance configs and activation policies"
     keyFiles:
+      - path: README.ai.yml
+        role: "AI-first navigation entry point for governance"
+        aiTags: [ai-entry, governance]
       - path: policies/activation-parameters.md
         role: "Governance-controlled parameter toggles (including rocket_fuel activation)"
         aiTags: [governance, activation]
-  - name: astroCrown-ACS.data
+  - name: AstroCrown-ACS.data
     purpose: "Calibration datasets and fee/liquidity profiles"
     keyFiles:
+      - path: README.ai.yml
+        role: "AI-first navigation entry point for datasets"
+        aiTags: [ai-entry, data]
       - path: feeds/market-fees.md
         role: "Fee/slippage data notes used by ACS"
         aiTags: [data, fees]
+  - name: haanmetric-ai-index
+    purpose: "Root manifest and cross-repo AI navigation hub"
+    keyFiles:
+      - path: AI_MANIFEST.yml
+        role: "Master AI manifest linking all repos and parameters"
+        aiTags: [ai-manifest, cross-repo]
 parameters:
   - id: floor_price
-    definedIn: astroCrown-ACS.docs/parameters/acs-parameters.yml#floor_price
+    definedIn: AstroCrown-ACS.docs/parameters/acs-parameters.yml#floor_price
+    configuredIn: AstroCrown-ACS.core/config/baseline_v1.0.0.yaml#floor_price
+    benchmarkedIn: AstroCrown-ACS.benchmarks/protocols/allocation-strategy-comparison.md#floor-price
+    reportedIn: AstroCrown-ACS.results/index/results-index.md#floor-price
   - id: roof_price
-    definedIn: astroCrown-ACS.docs/parameters/acs-parameters.yml#roof_price
+    definedIn: AstroCrown-ACS.docs/parameters/acs-parameters.yml#roof_price
+    configuredIn: AstroCrown-ACS.core/config/baseline_v1.0.0.yaml#roof_price
+    benchmarkedIn: AstroCrown-ACS.benchmarks/protocols/allocation-strategy-comparison.md#roof-price
+    reportedIn: AstroCrown-ACS.results/index/results-index.md#roof-price
   - id: tax_rate
-    definedIn: astroCrown-ACS.docs/parameters/acs-parameters.yml#tax_rate
+    definedIn: AstroCrown-ACS.docs/parameters/acs-parameters.yml#tax_rate
+    configuredIn: AstroCrown-ACS.core/config/baseline_v1.0.0.yaml#tax_rate
+    benchmarkedIn: AstroCrown-ACS.benchmarks/protocols/allocation-strategy-comparison.md#tax-rate
+    reportedIn: AstroCrown-ACS.results/index/results-index.md#tax-rate
   - id: allocation_splits
-    definedIn: astroCrown-ACS.docs/parameters/acs-parameters.yml#allocation_splits
+    definedIn: AstroCrown-ACS.docs/parameters/acs-parameters.yml#allocation_splits
+    configuredIn: AstroCrown-ACS.core/config/baseline_v1.0.0.yaml#allocation_splits
+    benchmarkedIn: AstroCrown-ACS.benchmarks/protocols/allocation-strategy-comparison.md#allocation-splits
+    reportedIn: AstroCrown-ACS.results/index/results-index.md#allocation-splits
   - id: crash_threshold
-    definedIn: astroCrown-ACS.docs/parameters/acs-parameters.yml#crash_threshold
+    definedIn: AstroCrown-ACS.docs/parameters/acs-parameters.yml#crash_threshold
+    configuredIn: AstroCrown-ACS.core/config/baseline_v1.0.0.yaml#crash_threshold
+    benchmarkedIn: AstroCrown-ACS.benchmarks/protocols/allocation-strategy-comparison.md#crash-threshold
+    reportedIn: AstroCrown-ACS.results/index/results-index.md#crash-threshold
   - id: rocket_fuel
-    definedIn: astroCrown-ACS.docs/parameters/acs-parameters.yml#rocket_fuel
-    configuredIn: astroCrown-ACS.core/config/baseline_v1.0.0.yaml#rocket_fuel_mode
-    benchmarkedIn: astroCrown-ACS.benchmarks/protocols/allocation-strategy-comparison.md#rocket-fuel
-    reportedIn: astroCrown-ACS.results/index/results-index.md#rocket-fuel
+    definedIn: AstroCrown-ACS.docs/parameters/acs-parameters.yml#rocket_fuel
+    configuredIn: AstroCrown-ACS.core/config/baseline_v1.0.0.yaml#rocket_fuel_mode
+    benchmarkedIn: AstroCrown-ACS.benchmarks/protocols/allocation-strategy-comparison.md#rocket-fuel
+    reportedIn: AstroCrown-ACS.results/index/results-index.md#rocket-fuel
